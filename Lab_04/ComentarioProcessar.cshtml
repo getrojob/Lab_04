@@ -1,0 +1,42 @@
+﻿
+@using Lab_04.App
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Estilos.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="~/default.cshtml">
+            <h1>Exemplo Web Page</h1>
+            <h2>Html, Javascript, Css, Razor e Web Pages</h2>
+        </a>
+    </header>
+    <section>
+        @if (!IsPost)
+        {
+            Response.Redirect("~/comentarioForm.cshtml");
+        }
+        else
+        {
+            string nome = Request.Form["nome"];
+            string comentario = Request.Form["comentario"];
+            if (string.IsNullOrWhiteSpace(nome) ||
+            string.IsNullOrWhiteSpace(comentario))
+            {
+                Response.Redirect("~/comentarioForm.cshtml");
+            }
+            else
+            {
+                WebApp.ComentarioIncluir(nome, comentario);
+                                }
+                            }
+        <p>Obrigado por seu comentário</p>
+        <p>
+            <a href="~/default.cshtml">Voltar</a>
+            <a href="~/ComentarioLista.cshtml">Exibir Comentários</a>
+        </p>
+    </section>
+</body>
+</html>

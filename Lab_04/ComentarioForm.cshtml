@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Estilos.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="~/default.cshtml">
+            <h1>Exemplo Web Page</h1>
+            <h2>Tecnologia Web - Html, Javascript, Css, Razor e Web Pages</h2>
+        </a>
+    </header>
+    <section>
+        <p>
+            Deixe seu comentário:
+        </p>
+        <div id="area">
+            <form action="~/ComentarioProcessar.cshtml" method="post">
+                <fieldset>
+                    <legend>Formulário</legend>
+                    <div class="form-grupo">
+                        <label for="nome">Nome: </label><br>
+                        <input type="text" name="nome" id="nome" />
+                    </div>
+                    <div class="form-grupo">
+                        <label for="comentario">Comentário</label><br>
+                        <textarea id="comentario" name="comentario"></textarea>
+                    </div>
+                    <div class="form-botoes">
+                        <input type="submit" class="botao"   value="Enviar" />
+                    </div>
+                </fieldset>
+            </form>
+            </div>
+    </section>
+</body>
+</html>
